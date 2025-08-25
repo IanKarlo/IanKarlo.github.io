@@ -1,46 +1,53 @@
 import React from 'react';
+import DynamicCard from '../DynamicCard/DynamicCard';
 
 const SkillCard = ({ title, description, skills, technologies, icon }) => (
-  <div className="bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-slate-700 hover:border-blue-500">
-    {/* Header do card */}
-    <div className="text-center mb-6">
-      <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-        <span className="text-2xl text-white">{icon}</span>
+  <DynamicCard
+    className="w-full h-full"
+    enableTilt={true}
+    enableMobileTilt={false}
+  >
+    <div className="bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-slate-700 hover:border-blue-500 h-full">
+      {/* Header do card */}
+      <div className="text-center mb-6">
+        <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span className="text-2xl text-white">{icon}</span>
+        </div>
+        <h3 className="text-2xl font-bold text-slate-100 mb-2">{title}</h3>
+        <p className="text-slate-300 leading-relaxed">{description}</p>
       </div>
-      <h3 className="text-2xl font-bold text-slate-100 mb-2">{title}</h3>
-      <p className="text-slate-300 leading-relaxed">{description}</p>
-    </div>
 
-    {/* Habilidades principais */}
-    <div className="mb-6">
-      <h4 className="text-lg font-semibold text-slate-100 mb-3 text-center">Habilidades Principais</h4>
-      <div className="flex flex-wrap gap-2 justify-center">
-        {skills.map((skill, index) => (
-          <span 
-            key={index}
-            className="px-3 py-1 bg-blue-900/50 text-blue-200 rounded-full text-sm font-medium hover:bg-blue-800/70 transition-colors duration-200 border border-blue-700/50"
-          >
-            {skill}
-          </span>
-        ))}
+      {/* Habilidades principais */}
+      <div className="mb-6">
+        <h4 className="text-lg font-semibold text-slate-100 mb-3 text-center">Habilidades Principais</h4>
+        <div className="flex flex-wrap gap-2 justify-center">
+          {skills.map((skill, index) => (
+            <span 
+              key={index}
+              className="px-3 py-1 bg-blue-900/50 text-blue-200 rounded-full text-sm font-medium hover:bg-blue-800/70 transition-colors duration-200 border border-blue-700/50"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
       </div>
-    </div>
 
-    {/* Tecnologias */}
-    <div className="text-center">
-      <h4 className="text-lg font-semibold text-slate-100 mb-3">Tecnologias</h4>
-      <div className="flex flex-wrap gap-2 justify-center">
-        {technologies.map((tech, index) => (
-          <span 
-            key={index}
-            className="px-3 py-1 bg-slate-700/50 text-slate-300 rounded-full text-sm font-medium hover:bg-slate-600/70 transition-colors duration-200 border border-slate-600/50"
-          >
-            {tech}
-          </span>
-        ))}
+      {/* Tecnologias */}
+      <div className="text-center">
+        <h4 className="text-lg font-semibold text-slate-100 mb-3">Tecnologias</h4>
+        <div className="flex flex-wrap gap-2 justify-center">
+          {technologies.map((tech, index) => (
+            <span 
+              key={index}
+              className="px-3 py-1 bg-slate-700/50 text-slate-300 rounded-full text-sm font-medium hover:bg-slate-600/70 transition-colors duration-200 border border-slate-600/50"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
-  </div>
+  </DynamicCard>
 );
 
 const Skills = () => {

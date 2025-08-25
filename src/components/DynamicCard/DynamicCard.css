@@ -1,0 +1,46 @@
+:root {
+  --rotate-x: 0deg;
+  --rotate-y: 0deg;
+}
+
+.dc-card-wrapper {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.dc-card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+  transform: rotateX(var(--rotate-x)) rotateY(var(--rotate-y));
+}
+
+.dc-card:hover,
+.dc-card.active {
+  transition: transform 0.1s ease-out;
+}
+
+.dc-inside {
+  width: 100%;
+  height: 100%;
+}
+
+.dc-content {
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+}
+
+.dc-content * {
+  transform: none;
+  pointer-events: auto;
+}
+
+/* Garante que links e botões funcionem normalmente */
+.dc-content a,
+.dc-content button,
+.dc-content [role="button"] {
+  pointer-events: auto;
+  cursor: pointer;
+}

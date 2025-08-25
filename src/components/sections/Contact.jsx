@@ -1,4 +1,5 @@
 import React from 'react';
+import DynamicCard from '../DynamicCard/DynamicCard';
 
 const Contact = () => {
   const socialLinks = [
@@ -64,25 +65,32 @@ const Contact = () => {
         {/* Cards de contato */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 max-w-6xl mx-auto">
           {socialLinks.map((social, index) => (
-            <a
+            <DynamicCard
               key={index}
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`group bg-slate-800 rounded-xl p-6 text-center transition-all duration-300 hover:scale-105 hover:shadow-xl border border-slate-700 hover:border-slate-500 ${social.color}`}
+              className="w-full h-full"
+              enableTilt={true}
+              enableMobileTilt={false}
+              disablePointerEvents={true} // Desabilita eventos de pointer para não interferir com os links
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <div className="text-white">
-                  {social.icon}
+              <a
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group bg-slate-800 rounded-xl p-6 text-center transition-all duration-300 hover:scale-105 hover:shadow-xl border border-slate-700 hover:border-slate-500 h-full flex flex-col items-center justify-center ${social.color}`}
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-white">
+                    {social.icon}
+                  </div>
                 </div>
-              </div>
-              <h3 className="text-lg font-semibold text-slate-100 mb-2 group-hover:text-white transition-colors duration-200">
-                {social.name}
-              </h3>
-              <p className="text-sm text-slate-400 group-hover:text-slate-200 transition-colors duration-200 leading-relaxed">
-                {social.description}
-              </p>
-            </a>
+                <h3 className="text-lg font-semibold text-slate-100 mb-2 group-hover:text-white transition-colors duration-200">
+                  {social.name}
+                </h3>
+                <p className="text-sm text-slate-400 group-hover:text-slate-200 transition-colors duration-200 leading-relaxed">
+                  {social.description}
+                </p>
+              </a>
+            </DynamicCard>
           ))}
         </div>
 

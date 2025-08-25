@@ -9,12 +9,12 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <Background
           hueShift={0}
-          noiseIntensity={0.02}
-          scanlineIntensity={0.1}
-          speed={0.8}
+          noiseIntensity={0.0}
+          scanlineIntensity={0.0}
+          speed={1.5}
           scanlineFrequency={0.5}
           warpAmount={0.02}
-          resolutionScale={1}
+          resolutionScale={1.3}
         />
       </div>
       
