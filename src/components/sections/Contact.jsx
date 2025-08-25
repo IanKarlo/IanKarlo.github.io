@@ -49,7 +49,7 @@ const Contact = () => {
   ];
 
   return (
-    <section className="py-16 bg-slate-900" id="contact">
+    <section className="py-16 bg-transparent" id="contact">
       <div className="container mx-auto px-6">
         {/* Header da seção */}
         <div className="text-center mb-16">

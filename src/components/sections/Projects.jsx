@@ -191,7 +191,7 @@ const Projects = () => {
   };
 
   return (
-    <section className="bg-slate-900 py-20" id="projects">
+    <section className="bg-transparent py-16" id="projects">
       <div style={{ width: '100px', height: '100px' }}>
         <DynamicCard
           name="Javi A. Torres"
