@@ -1,7 +1,11 @@
 import React from 'react';
 import AsciiArt from '../AsciiArt';
+import { useLanguage } from '../../hooks/useLanguage';
 
 const Hero = () => {
+  const { translations } = useLanguage();
+  const t = translations.hero;
+
   return (
     <section className="min-h-screen bg-transparent relative overflow-hidden" id="hero">
       {/* Elementos decorativos de fundo */}
@@ -27,12 +31,12 @@ const Hero = () => {
             {/* Badge de status */}
             <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-full text-blue-300 text-sm font-medium mb-6 backdrop-blur-sm">
               <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
-              Disponível para novos projetos
+              {t.status}
             </div>
 
             {/* Título principal */}
             <h1 className="text-5xl lg:text-7xl font-bold text-slate-100 mb-6 leading-tight">
-              Olá, sou{' '}
+              {t.greeting}{' '}
               <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 Ian Torres
               </span>
@@ -40,25 +44,23 @@ const Hero = () => {
 
             {/* Subtítulo */}
             <h2 className="text-2xl lg:text-3xl text-slate-300 mb-6 font-medium">
-              Engenheiro de Software & DevOps
+              {t.title}
             </h2>
 
             {/* Descrição */}
             <p className="text-lg lg:text-xl text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Construo sistemas robustos e escaláveis, simplifico processos de implantação e 
-              garanto integração e desempenho contínuos. Apaixonado por tecnologia e sempre 
-              em busca de novos desafios.
+              {t.description}
             </p>
 
             {/* Estatísticas */}
             <div className="grid grid-cols-2 gap-6 mb-8 max-w-md mx-auto lg:mx-0">
               <div className="text-center">
                 <div className="text-2xl font-bold text-blue-400">5+</div>
-                <div className="text-sm text-slate-400">Anos de Experiência</div>
+                <div className="text-sm text-slate-400">{t.stats.experience}</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-purple-400">10+</div>
-                <div className="text-sm text-slate-400">Tecnologias Dominadas</div>
+                <div className="text-sm text-slate-400">{t.stats.technologies}</div>
               </div>
             </div>
 
@@ -68,7 +70,7 @@ const Hero = () => {
                 href="#projects" 
                 className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg text-lg font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105"
               >
-                Ver Meus Projetos
+                {t.buttons.projects}
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -77,7 +79,7 @@ const Hero = () => {
                 href="#contact" 
                 className="inline-flex items-center justify-center px-8 py-4 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-lg text-lg font-semibold transition-all duration-300 border border-slate-600 hover:border-slate-500"
               >
-                Vamos Conversar
+                {t.buttons.contact}
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                 </svg>
@@ -87,7 +89,7 @@ const Hero = () => {
             {/* Scroll indicator */}
             <div className="hidden lg:block mt-16">
               <div className="flex flex-col items-center text-slate-400 animate-bounce">
-                <span className="text-sm mb-2">Role para baixo</span>
+                <span className="text-sm mb-2">{t.scrollIndicator}</span>
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
