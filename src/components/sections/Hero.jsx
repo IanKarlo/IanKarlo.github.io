@@ -36,7 +36,7 @@ const Hero = () => {
         }}></div>
       </div>
 
-      <div className="relative z-30 container mx-auto px-6 py-20">
+      <div className="relative z-30 container mx-auto px-6 py-16">
         <div className="flex flex-col lg:flex-row items-center justify-between min-h-screen">
           
           {/* Conteúdo principal - Lado esquerdo */}

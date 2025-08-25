@@ -5,7 +5,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-slate-900 border-t border-slate-800">
-      <div className="container mx-auto px-6 py-12">
+      <div className="container mx-auto px-6 py-8">
         {/* Conteúdo principal do footer */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Coluna 1 - Sobre */}

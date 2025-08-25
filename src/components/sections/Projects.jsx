@@ -1,13 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DynamicCard from '../DynamicCard/DynamicCard'
 
-const ProjectCard = ({ title, description, technologies, link, status, icon }) => (
+const ProjectCard = ({ title, description, technologies, link, status, icon, index, isVisible }) => (
   <DynamicCard
     className="w-full h-full"
     enableTilt={true}
     enableMobileTilt={false}
   >
-    <div className="bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-slate-700 hover:border-blue-500 group h-full">
+    <div 
+      className={`bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-slate-700 hover:border-blue-500 group h-full transform transition-all duration-700 ease-out ${
+        isVisible 
+          ? 'opacity-100 translate-y-0 scale-100' 
+          : 'opacity-0 translate-y-8 scale-95'
+      }`}
+      style={{
+        transitionDelay: `${index * 100}ms`
+      }}
+    >
       {/* Header do card */}
       <div className="flex items-center mb-4">
         <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-4">
@@ -64,6 +73,8 @@ const ProjectCard = ({ title, description, technologies, link, status, icon }) =
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState('personal');
+  const [isVisible, setIsVisible] = useState(false);
+  const [isTabChanging, setIsTabChanging] = useState(false);
 
   // Projetos pessoais que você desenvolveu
   const personalProjects = [
@@ -155,49 +166,101 @@ const Projects = () => {
 
   const activeProjects = activeTab === 'personal' ? personalProjects : communityProjects;
 
+  // Efeito para mostrar os cards com fade
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  // Efeito para animar a mudança de aba
+  useEffect(() => {
+    setIsTabChanging(true);
+    setIsVisible(false);
+    
+    const timer = setTimeout(() => {
+      setIsTabChanging(false);
+      setIsVisible(true);
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, [activeTab]);
+
+  const handleTabChange = (tab) => {
+    if (tab !== activeTab) {
+      setActiveTab(tab);
+    }
+  };
+
   return (
     <section className="bg-slate-900 py-20" id="projects">
+      <div style={{ width: '100px', height: '100px' }}>
+        <DynamicCard
+          name="Javi A. Torres"
+          title="Software Engineer"
+          handle="javicodes"
+          status="Online"
+          contactText="Contact Me"
+          avatarUrl="https://png.pngtree.com/png-clipart/20230921/original/pngtree-bearded-man-face-male-generic-profile-picture-isolated-retro-character-vector-png-image_12644436.png"
+          showUserInfo={true}
+          enableTilt={true}
+          enableMobileTilt={false}
+          onContactClick={() => console.log('Contact clicked')}
+        />
+      </div>
       <div className="container mx-auto px-6">
         {/* Header da seção */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-slate-100 mb-4">Meus Projetos</h2>
-          <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-            Aqui você encontra uma seleção dos projetos que desenvolvi ao longo da minha carreira, 
-            desde aplicações empresariais até contribuições para a comunidade open source. 
-            Cada projeto representa um desafio único e uma oportunidade de aprendizado.
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+            Uma seleção dos projetos que desenvolvi e das contribuições que fiz para a comunidade de desenvolvedores.
           </p>
         </div>
 
-        {/* Tabs para alternar entre tipos de projetos */}
+        {/* Tabs de navegação */}
         <div className="flex justify-center mb-12">
-          <div className="bg-slate-800 rounded-xl p-2 border border-slate-700">
-            <button
-              onClick={() => setActiveTab('personal')}
-              className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
-                activeTab === 'personal'
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-                  : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700'
-              }`}
-            >
-              Projetos que desenvolvi
-            </button>
-            <button
-              onClick={() => setActiveTab('community')}
-              className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
-                activeTab === 'community'
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-                  : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700'
-              }`}
-            >
-              Projetos para a comunidade
-            </button>
+          <div className="bg-slate-800 rounded-xl p-2 border border-slate-700 relative">
+            <div className="flex space-x-2 relative">
+              {/* Background deslizante */}
+              <div 
+                className={`absolute top-0 left-2 w-48 h-12 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 ease-out ${
+                  activeTab === 'personal' 
+                    ? 'translate-x-0' 
+                    : 'translate-x-[calc(100%+8px)]'
+                }`}
+              />
+              
+              <button
+                onClick={() => handleTabChange('personal')}
+                className={`relative px-6 py-4 rounded-lg font-medium transition-all duration-300 z-10 w-48 h-12 flex items-center justify-center ${
+                  activeTab === 'personal'
+                    ? 'text-white'
+                    : 'text-slate-300 hover:text-white'
+                }`}
+              >
+                Projetos que desenvolvi
+              </button>
+              <button
+                onClick={() => handleTabChange('community')}
+                className={`relative px-6 py-4 rounded-lg font-medium transition-all duration-300 z-10 w-48 h-12 flex items-center justify-center ${
+                  activeTab === 'community'
+                    ? 'text-white'
+                    : 'text-slate-300 hover:text-white'
+                }`}
+              >
+                Projetos para a comunidade
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Grid de projetos */}
+        {/* Grid de projetos com animação */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {activeProjects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+            <ProjectCard 
+              key={`${activeTab}-${index}`} 
+              {...project} 
+              index={index}
+              isVisible={isVisible && !isTabChanging}
+            />
           ))}
         </div>
 
