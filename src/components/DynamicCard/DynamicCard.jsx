@@ -59,8 +59,8 @@ const DynamicCardComponent = ({
       const centerY = percentY - 50;
 
       const properties = {
-        "--rotate-x": `${round(-(centerX / 5))}deg`,
-        "--rotate-y": `${round(centerY / 4)}deg`,
+        "--rotate-x": `${round(-(centerX / 20))}deg`,
+        "--rotate-y": `${round(centerY / 16)}deg`,
       };
 
       Object.entries(properties).forEach(([property, value]) => {
