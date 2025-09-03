@@ -67,40 +67,28 @@ export default {
     technologies: "Tecnologias:",
     viewProject: "Ver projeto",
     personalProjects: {
-      ecommerce: {
-        title: "Sistema de E-commerce",
-        description: "Plataforma completa de e-commerce com gestão de produtos, carrinho de compras, sistema de pagamentos e painel administrativo."
+      yourtale: {
+        title: "YourTale",
+        description: "Plataforma de rpg de mesa online, com utilização de inteligencia artificial para gerar narrativas, personagens e mestrar sessões."
       },
-      api: {
-        title: "API de Gestão Empresarial",
-        description: "API RESTful para gestão de empresas, incluindo módulos de RH, financeiro, estoque e relatórios personalizados."
+      asciffier: {
+        title: "Asciffier",
+        description: "Ferramenta CLI para converter imagens em ascii art."
       },
-      delivery: {
-        title: "App Mobile de Delivery",
-        description: "Aplicativo mobile para delivery de comida com geolocalização, rastreamento em tempo real e sistema de avaliações."
+      sshHelper: {
+        title: "SSH Helper",
+        description: "Ferramenta CLI para auxiliar no uso de SSH."
       },
-      dashboard: {
-        title: "Dashboard Analytics",
-        description: "Dashboard interativo para análise de dados empresariais com gráficos em tempo real e exportação de relatórios."
+      musyc: {
+        title: "Musyc",
+        description: "Bot musical do discord para download e reprodução de videos do youtube."
       }
     },
     communityProjects: {
       components: {
-        title: "Biblioteca de Componentes React",
-        description: "Biblioteca open source de componentes React reutilizáveis com foco em acessibilidade e design system consistente."
+        title: "Boilerplate de Nodejs + Rust",
+        description: "Boilerplate open source para iniciar projetos Nodejs + Rust utilizando Napi com configurações otimizadas e boas práticas."
       },
-      cli: {
-        title: "CLI para Automação de DevOps",
-        description: "Ferramenta de linha de comando para automatizar tarefas comuns de DevOps e deployment."
-      },
-      plugin: {
-        title: "Plugin para VS Code",
-        description: "Plugin para VS Code que facilita o desenvolvimento com múltiplas tecnologias e frameworks."
-      },
-      template: {
-        title: "Template de Projeto Full-Stack",
-        description: "Template completo para iniciar projetos full-stack com configurações otimizadas e boas práticas."
-      }
     }
   },
   contact: {

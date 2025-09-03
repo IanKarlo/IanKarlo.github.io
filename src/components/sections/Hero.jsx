@@ -105,6 +105,7 @@ const Hero = () => {
                 <AsciiArt
                   className="border-0 shadow-none bg-transparent"
                   fontSize="4px"
+                  mobileFontSize="0.8px"
                   color="#e2e8f0"
                 />
                 

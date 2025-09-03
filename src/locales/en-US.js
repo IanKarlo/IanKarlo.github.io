@@ -67,40 +67,28 @@ export default {
     technologies: "Technologies:",
     viewProject: "View project",
     personalProjects: {
-      ecommerce: {
-        title: "E-commerce System",
-        description: "Complete e-commerce platform with product management, shopping cart, payment system and administrative panel."
+      yourtale: {
+        title: "YourTale",
+        description: "Online tabletop RPG platform, using artificial intelligence to generate narratives, characters and master sessions."
       },
-      api: {
-        title: "Business Management API",
-        description: "RESTful API for business management, including HR, financial, inventory modules and customized reports."
+      asciffier: {
+        title: "Asciffier",
+        description: "CLI tool to convert images to ascii art."
       },
-      delivery: {
-        title: "Mobile Delivery App",
-        description: "Mobile application for food delivery with geolocation, real-time tracking and rating system."
+      sshHelper: {
+        title: "SSH Helper",
+        description: "CLI tool to assist with SSH usage."
       },
-      dashboard: {
-        title: "Analytics Dashboard",
-        description: "Interactive dashboard for business data analysis with real-time charts and report export."
+      musyc: {
+        title: "Musyc",
+        description: "Discord music bot for downloading and playing youtube videos."
       }
     },
     communityProjects: {
       components: {
-        title: "React Components Library",
-        description: "Open source library of reusable React components focused on accessibility and consistent design system."
+        title: "Nodejs + Rust Boilerplate",
+        description: "Open source boilerplate to start Nodejs + Rust utilizing Napi with optimized configurations and best practices."
       },
-      cli: {
-        title: "DevOps Automation CLI",
-        description: "Command line tool to automate common DevOps tasks and deployment."
-      },
-      plugin: {
-        title: "VS Code Plugin",
-        description: "VS Code plugin that facilitates development with multiple technologies and frameworks."
-      },
-      template: {
-        title: "Full-Stack Project Template",
-        description: "Complete template to start full-stack projects with optimized configurations and best practices."
-      }
     }
   },
   contact: {

@@ -7,7 +7,7 @@ const ProjectCard = ({ projectKey, technologies, link, status, icon, index, isVi
   const t = translations.projects;
 
   // Determina se é projeto pessoal ou da comunidade
-  const isPersonal = ['ecommerce', 'api', 'delivery', 'dashboard'].includes(projectKey);
+  const isPersonal = ['yourtale', 'asciffier', 'sshHelper', 'musyc'].includes(projectKey);
   const projectData = isPersonal ? t.personalProjects[projectKey] : t.communityProjects[projectKey];
 
   return (
@@ -69,6 +69,7 @@ const ProjectCard = ({ projectKey, technologies, link, status, icon, index, isVi
           <a 
             href={link} 
             className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-200 text-sm font-medium group/link"
+            target="_blank"
           >
             {t.viewProject}
             <svg className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,30 +93,30 @@ const Projects = () => {
   // Projetos pessoais que você desenvolveu
   const personalProjects = [
     {
-      projectKey: 'ecommerce',
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "Docker"],
-      link: "#",
-      status: "completed",
-      icon: "🛒"
-    },
-    {
-      projectKey: 'api',
-      technologies: ["Python", "FastAPI", "MongoDB", "Redis", "JWT"],
-      link: "#",
-      status: "completed",
-      icon: "🏢"
-    },
-    {
-      projectKey: 'delivery',
-      technologies: ["React Native", "Firebase", "Google Maps", "Push Notifications"],
-      link: "#",
+      projectKey: 'yourtale',
+      technologies: ["Nextjs", "Nestjs", "PostgreSQL", "Docker", "AI"],
+      link: "https://github.com/IanKarlo/your-tale",
       status: "in-progress",
-      icon: "📱"
+      icon: "🎲"
     },
     {
-      projectKey: 'dashboard',
-      technologies: ["Vue.js", "D3.js", "Python", "PostgreSQL", "AWS"],
-      link: "#",
+      projectKey: 'asciffier',
+      technologies: ["Zig", "C++", "OpenCV"],
+      link: "https://github.com/IanKarlo/asciffier",
+      status: "completed",
+      icon: "🖼️"
+    },
+    {
+      projectKey: 'sshHelper',
+      technologies: ["Rust", "Github Actions"],
+      link: "https://github.com/IanKarlo/ssh-helper",
+      status: "in-progress",
+      icon: "🔑"
+    },
+    {
+      projectKey: 'musyc',
+      technologies: ["Python", "Discord.py", "MongoDB", "Youtube-dl", "Youtube Data API", "Sentence Transformers"],
+      link: "https://github.com/IanKarlo/musyc",
       status: "completed",
       icon: "📊"
     }
@@ -125,31 +126,10 @@ const Projects = () => {
   const communityProjects = [
     {
       projectKey: 'components',
-      technologies: ["React", "TypeScript", "Storybook", "Jest", "Rollup"],
-      link: "#",
-      status: "completed",
-      icon: "🧩"
-    },
-    {
-      projectKey: 'cli',
-      technologies: ["Node.js", "Commander.js", "Docker", "Shell Scripts", "YAML"],
-      link: "#",
-      status: "completed",
-      icon: "⚡"
-    },
-    {
-      projectKey: 'plugin',
-      technologies: ["TypeScript", "VS Code API", "Webpack", "Jest", "GitHub Actions"],
-      link: "#",
+      technologies: ["Node.js", "Rust", "Docker"],
+      link: "https://github.com/IanKarlo/node-ts-napi-rs-boilerplate",
       status: "in-progress",
-      icon: "🔌"
-    },
-    {
-      projectKey: 'template',
-      technologies: ["React", "Node.js", "PostgreSQL", "Docker", "GitHub Actions"],
-      link: "#",
-      status: "planned",
-      icon: "🚀"
+      icon: "🧩"
     }
   ];
 
