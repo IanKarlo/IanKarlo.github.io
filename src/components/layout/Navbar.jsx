@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import LanguageSwitcher from '../LanguageSwitcher';
 import { useLanguage } from '../../hooks/useLanguage';
+import { NavigationLink } from '../navigation';
+import { ProgressIndicator } from '../ui';
 
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -64,34 +66,10 @@ const Navbar = () => {
           
           {/* Links de navegação - Desktop */}
           <div className="hidden md:flex items-center space-x-8">
-            <a 
-              href="#hero" 
-              className="text-slate-300 hover:text-white transition-all duration-300 font-medium relative group"
-            >
-              {t.home}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a 
-              href="#skills" 
-              className="text-slate-300 hover:text-white transition-all duration-300 font-medium relative group"
-            >
-              {t.skills}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a 
-              href="#projects" 
-              className="text-slate-300 hover:text-white transition-all duration-300 font-medium relative group"
-            >
-              {t.projects}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a 
-              href="#contact" 
-              className="text-slate-300 hover:text-white transition-all duration-300 font-medium relative group"
-            >
-              {t.contact}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            <NavigationLink href="#hero">{t.home}</NavigationLink>
+            <NavigationLink href="#skills">{t.skills}</NavigationLink>
+            <NavigationLink href="#projects">{t.projects}</NavigationLink>
+            <NavigationLink href="#contact">{t.contact}</NavigationLink>
           </div>
           
           {/* Botão de contato destacado */}
@@ -115,14 +93,7 @@ const Navbar = () => {
       </div>
 
       {/* Indicador de progresso da página */}
-      <div className="absolute bottom-0 left-0 w-full h-0.5 bg-slate-700/30">
-        <div 
-          className="h-full bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300"
-          style={{
-            width: `${Math.min((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100, 100)}%`
-          }}
-        ></div>
-      </div>
+      <ProgressIndicator />
     </nav>
   );
 };
