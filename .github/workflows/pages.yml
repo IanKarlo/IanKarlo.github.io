@@ -1,4 +1,4 @@
-name: Deploy Vite React to GitHub Pages
+name: Deploy Vite to GitHub Pages
 
 on:
   push:
@@ -18,28 +18,31 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
 
-      - name: Install deps
+      - name: Install
         run: npm ci
 
       - name: Build
         run: npm run build  # Vite gera ./dist
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
+      - name: Show dist (debug)
+        run: |
+          echo "Dist tree:"
+          ls -la dist
+          echo "Top-level files in dist:"
+          find dist -maxdepth 2 -type f | sed -n '1,50p'
 
-      - name: Upload artifact
+      - uses: actions/configure-pages@v5
+
+      - name: Upload artifact (dist)
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist   # <= importante para Vite
+          path: ./dist
 
   deploy:
     needs: build
@@ -48,6 +51,5 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
+      - id: deployment
         uses: actions/deploy-pages@v4
