@@ -42,7 +42,7 @@ const Projects = () => {
       technologies: ["Python", "Discord.py", "MongoDB", "Youtube-dl", "Youtube Data API", "Sentence Transformers"],
       link: "https://github.com/IanKarlo/musyc",
       status: "completed",
-      icon: "📊"
+      icon: "🎤"
     }
   ];
 
