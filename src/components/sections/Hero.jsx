@@ -24,10 +24,10 @@ const Hero = () => {
       </div>
 
       <div className="relative z-30 container mx-auto px-6 py-16">
-        <div className="flex flex-col lg:flex-row items-center justify-between min-h-screen">
+        <div className="flex flex-col xl:flex-row items-center justify-between min-h-screen">
           
           {/* Conteúdo principal - Lado esquerdo */}
-          <div className="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
+          <div className="w-full xl:w-2/5 text-center xl:text-left mb-12 xl:mb-0">
             {/* Badge de status */}
             <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-full text-blue-300 text-sm font-medium mb-6 backdrop-blur-sm">
               <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
@@ -48,12 +48,12 @@ const Hero = () => {
             </h2>
 
             {/* Descrição */}
-            <p className="text-lg lg:text-xl text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            <p className="text-lg lg:text-xl text-slate-400 mb-8 leading-relaxed max-w-2xl xl:max-w-xl mx-auto xl:mx-0">
               {t.description}
             </p>
 
             {/* Estatísticas */}
-            <div className="grid grid-cols-2 gap-6 mb-8 max-w-md mx-auto lg:mx-0">
+            <div className="grid grid-cols-2 gap-6 mb-8 max-w-md mx-auto xl:mx-0">
               <div className="text-center">
                 <div className="text-2xl font-bold text-blue-400">5+</div>
                 <div className="text-sm text-slate-400">{t.stats.experience}</div>
@@ -65,7 +65,7 @@ const Hero = () => {
             </div>
 
             {/* Botões de ação */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center xl:justify-start">
               <a 
                 href="#projects" 
                 className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg text-lg font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105"
@@ -87,7 +87,7 @@ const Hero = () => {
             </div>
 
             {/* Scroll indicator */}
-            <div className="hidden lg:block mt-16">
+            <div className="hidden xl:block mt-16">
               <div className="flex flex-col items-center text-slate-400 animate-bounce">
                 <span className="text-sm mb-2">{t.scrollIndicator}</span>
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -98,7 +98,7 @@ const Hero = () => {
           </div>
 
           {/* Lado direito - ASCII Art e elementos visuais */}
-          <div className="lg:w-1/2 flex justify-center lg:justify-end">
+          <div className="w-full xl:w-3/5 flex justify-center xl:justify-end hidden sm:flex">
             <div className="relative">
               {/* Container do ASCII Art com efeitos */}
               <div className="relative bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700/50 shadow-2xl">
