@@ -7,7 +7,7 @@ const ProjectCard = ({ projectKey, technologies, link, status, icon, index, isVi
   const t = translations.projects;
 
   // Determina se é projeto pessoal ou da comunidade
-  const isPersonal = ['yourtale', 'asciffier', 'sshHelper', 'musyc'].includes(projectKey);
+  const isPersonal = ['yourtale', 'asciifier', 'sshHelper', 'musyc'].includes(projectKey);
   const projectData = isPersonal ? t.personalProjects[projectKey] : t.communityProjects[projectKey];
 
   return (

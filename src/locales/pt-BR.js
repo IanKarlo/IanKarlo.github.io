@@ -71,8 +71,8 @@ export default {
         title: "YourTale",
         description: "Plataforma de rpg de mesa online, com utilização de inteligencia artificial para gerar narrativas, personagens e mestrar sessões."
       },
-      asciffier: {
-        title: "Asciffier",
+      asciifier: {
+        title: "Asciifier",
         description: "Ferramenta CLI para converter imagens em ascii art."
       },
       sshHelper: {

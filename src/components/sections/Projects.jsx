@@ -24,9 +24,9 @@ const Projects = () => {
       icon: "🎲"
     },
     {
-      projectKey: 'asciffier',
+      projectKey: 'asciifier',
       technologies: ["Zig", "C++", "OpenCV"],
-      link: "https://github.com/IanKarlo/asciffier",
+      link: "https://github.com/IanKarlo/asciifier",
       status: "completed",
       icon: "🖼️"
     },

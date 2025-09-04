@@ -71,8 +71,8 @@ export default {
         title: "YourTale",
         description: "Online tabletop RPG platform, using artificial intelligence to generate narratives, characters and master sessions."
       },
-      asciffier: {
-        title: "Asciffier",
+      asciifier: {
+        title: "Asciifier",
         description: "CLI tool to convert images to ascii art."
       },
       sshHelper: {
