@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../../hooks/useLanguage';
-import { email, formattedPhone, phone } from '../../assets/strings';
+import { email } from '../../assets/strings';
 import { SocialLinks, QuickLinks } from '../footer';
 
 const Footer = () => {
@@ -34,12 +34,6 @@ const Footer = () => {
                 <span className="font-medium">{t.email}</span><br />
                 <a href={`mailto:${email}`} className="hover:text-white transition-colors duration-200">
                   {email}
-                </a>
-              </p>
-              <p className="text-slate-400">
-                <span className="font-medium">{t.whatsapp}</span><br />
-                <a href={`https://wa.me/${phone}`} className="hover:text-white transition-colors duration-200">
-                  {formattedPhone}
                 </a>
               </p>
             </div>

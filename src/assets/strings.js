@@ -129,8 +129,6 @@ n ? >     O L X n )                   (                                         
       ? ' ^ ' +                                                                                 ( / / / | ; } / t f f t t t t t > l ! l                   x / t t t f j j r r r r x r t / [ `;
 
 
-export const phone = '5581995173171';
-export const formattedPhone = "+55 (81) 99517-3171";
 export const email = 'iankarlotsantos@gmail.com';
 export const github = 'https://github.com/IanKarlo';
 export const linkedin = 'https://www.linkedin.com/in/iantorres26/';
