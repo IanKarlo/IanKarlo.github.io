@@ -1,6 +1,7 @@
 import React from 'react';
 import DynamicCard from '../DynamicCard/DynamicCard';
 import { useLanguage } from '../../hooks/useLanguage';
+import TechnologyLogo from '../TechnologyLogo';
 
 const SkillCard = ({ title, description, skills, technologies, icon }) => {
   const { translations } = useLanguage();
@@ -48,9 +49,10 @@ const SkillCard = ({ title, description, skills, technologies, icon }) => {
             {technologies.map((tech, index) => (
               <span 
                 key={index}
-                className="px-3 py-1 bg-slate-700/50 text-slate-300 rounded-full text-sm font-medium hover:bg-slate-600/70 transition-colors duration-200 border border-slate-600/50"
+                className="px-3 py-1 bg-slate-700/50 text-slate-300 rounded-full text-sm font-medium hover:bg-slate-600/70 transition-colors duration-200 border border-slate-600/50 flex items-center gap-2"
               >
-                {tech}
+                <TechnologyLogo technology={tech} className="w-4 h-4" />
+                <span>{tech}</span>
               </span>
             ))}
           </div>
